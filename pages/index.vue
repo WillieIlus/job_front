@@ -22,11 +22,23 @@
             </div>
           </div>
         </div>
-        <img src="assets/images/bg-shape.png" alt="" class="absolute block -bottom-5 dark:hidden">
-        <img src="assets/images/bg-shape-dark.png" alt="" class="absolute hidden -bottom-5 dark:block">
+        <img src="../assets/images/bg-shape.png" alt="" class="absolute block -bottom-5 dark:hidden">
+        <img src="../assets/images/bg-shape-dark.png" alt="" class="absolute hidden -bottom-5 dark:block">
       </section>
       <TopCategories />
-      <TopJobs />
+      <JobList :jobs="jobs" :loading="loading" :error="error"/> 
     </div>
   </div>
 </template>
+<script setup>
+import { onMounted } from 'vue'
+import { useJobStore } from '~/store/jobs'
+import { storeToRefs } from 'pinia'
+
+const jobStore = useJobStore()
+const { jobs, loading, error, } = storeToRefs(jobStore)
+
+onMounted(async () => {
+  await jobStore.fetchJobs()
+})
+</script>

@@ -7,7 +7,7 @@
           <div class="grid items-center justify-center grid-cols-12">
             <div class="col-span-12 lg:col-span-6 lg:col-start-4">
               <div class="text-center">
-                <img src="assets/images/404.png" alt="" class="img-fluid">
+                <img src="../assets/images/404.png" alt="" class="img-fluid">
                 <div class="mt-10">
                   <h4 class="mt-3 mb-1 uppercase text-22 dark:text-gray-50">Sorry, page not found</h4>
                   <p class="text-gray-500 dark:text-gray-300">It looks like something broke.</p>

@@ -27,7 +27,7 @@
 @import "icons/fontawesome.css";
 @import "icons/line-awesome.css";
 @import "icons/materialdesignicons.css";
-@import "icons/tabler-icons.css";
+/* @import "icons/tabler-icons.css"; */
 
 :root {
    --tw-sidebar-width: 250px;
