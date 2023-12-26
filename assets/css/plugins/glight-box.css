@@ -1,0 +1,11 @@
+.glightbox-clean .gslide-description {
+    @apply bg-white dark:bg-neutral-800 dark:text-gray-300;
+}
+
+.gslide-description .gdesc-inner .gslide-desc {
+    @apply text-base;
+}
+.gslide-description .gdesc-inner .gslide-title {
+    @apply mb-[5px]  font-medium dark:text-white;
+    /* text-17 */
+}
