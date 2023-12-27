@@ -208,8 +208,8 @@
                       <img src="assets/images/featured-job/img-02.png" alt="" class="mx-auto img-fluid">
 
                       <div class="mt-4 text-center">
-                        <h6 class="text-gray-900 text-17 dark:text-gray-50"> {{ job.company.name }}</h6>
-                        <p class="text-gray-500 dark:text-gray-300">Since July 2017</p>
+                        <h6 class="text-gray-900 text-17 dark:text-gray-50"> {{ job.company ? job.company.name : ''  }}</h6>
+                        <p class="text-gray-500 dark:text-gray-300 Since July 2017"></p>
                       </div>
 
                       <ul class="mt-4 space-y-4">
@@ -219,7 +219,7 @@
                               class="text-xl uil uil-phone-volume group-data-[theme-color=violet]:text-violet-500 group-data-[theme-color=sky]:text-sky-500 group-data-[theme-color=red]:text-red-500 group-data-[theme-color=green]:text-green-500 group-data-[theme-color=pink]:text-pink-500 group-data-[theme-color=blue]:text-blue-500"></i>
                             <div class="ltr:ml-3 rtl:mr-3">
                               <h6 class="mb-1 text-sm text-gray-900 dark:text-gray-50">Phone</h6>
-                              <p class="text-sm text-gray-500 dark:text-gray-300">{{ job.company.phone }} </p>
+                              <p class="text-sm text-gray-500 dark:text-gray-300">{{ job.company ? job.company.phone : '' }} </p>
                             </div>
                           </div>
                         </li>
@@ -229,7 +229,7 @@
                               class="text-xl uil uil-envelope group-data-[theme-color=violet]:text-violet-500 group-data-[theme-color=sky]:text-sky-500 group-data-[theme-color=red]:text-red-500 group-data-[theme-color=green]:text-green-500 group-data-[theme-color=pink]:text-pink-500 group-data-[theme-color=blue]:text-blue-500"></i>
                             <div class="ltr:ml-3 rtl:mr-3">
                               <h6 class="mb-1 text-sm text-gray-900 dark:text-gray-50">Email</h6>
-                              <p class="text-sm text-gray-500 dark:text-gray-300">{{ job.company.email }} </p>
+                              <p class="text-sm text-gray-500 dark:text-gray-300">{{ job.company ? job.company.email : ''}} </p>
                             </div>
                           </div>
                         </li>
@@ -240,7 +240,7 @@
                             <div class="ltr:ml-3 rtl:mr-3">
                               <h6 class="mb-1 text-sm text-gray-900 dark:text-gray-50">Website</h6>
                               <p class="mb-0 text-gray-500 dark:text-gray-300 fs-14 text-break">
-                                {{ job.company.website }} </p>
+                                {{ job.company ? job.company.website : '' }} </p>
                             </div>
                           </div>
                         </li>
@@ -250,7 +250,7 @@
                               class="text-xl uil uil-map-marker group-data-[theme-color=violet]:text-violet-500 group-data-[theme-color=sky]:text-sky-500 group-data-[theme-color=red]:text-red-500 group-data-[theme-color=green]:text-green-500 group-data-[theme-color=pink]:text-pink-500 group-data-[theme-color=blue]:text-blue-500"></i>
                             <div class="ltr:ml-3 rtl:mr-3">
                               <h6 class="mb-1 text-sm text-gray-900 dark:text-gray-50">Location</h6>
-                              <p class="text-sm text-gray-500 dark:text-gray-300">{{ job.location.name }}</p>
+                              <p class="text-sm text-gray-500 dark:text-gray-300">{{ job.location ? job.location.name : '' }}</p>
                             </div>
                           </div>
                         </li>
