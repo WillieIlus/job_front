@@ -275,6 +275,7 @@
     </div>
   </div>
 </template>
+
 <script setup>
 import { storeToRefs } from 'pinia'
 import { useRouter, useRoute } from 'vue-router'
@@ -291,6 +292,9 @@ const { job, jobs, loading, error } = storeToRefs(jobStore)
 const route = useRoute()
 const router = useRouter()
 
+const jobData = (job ?? {  }).value?.title ?? 'Job Detail... ';
+const locationData =  (job ?? { }).value?.location ?? '... '
+
 const breadcrumbs = [
   {
     label: 'Home',
@@ -301,12 +305,35 @@ const breadcrumbs = [
     to: '/jobs',
   },
   {
-    label: job.title || 'Job Details',
+    label: jobData || 'Job Details',
     to: route.fullPath,
   }
 ]
 
-const pageTitle = job.title || 'Job Detail'
+const pageTitle = jobData || 'Job Detail'
+
+const title = computed(() => {
+  const jobTitle = jobData || 'Job detail';
+  const locationName = locationData || 'Kenya';
+  return `${jobTitle} Job vacancy in ${locationName}`;
+});
+
+const description = computed(() => {
+  const jobTitle = jobData || 'Job detail';
+  const locationName = locationData || 'Kenya';
+  return `Check out this ${jobTitle.toLowerCase()} jobs in ${locationName.toLowerCase()}.`;
+});
+
+useHead({
+  title: title.value,
+  titleTemplate: '%s - Alfajir Jobs',
+  meta: [
+    { name: 'description', content: description.value },
+    { property: 'og:title', content: title.value },
+    { property: 'og:description', content: description.value },
+    { name: 'twitter:description', content: description.value },
+  ],
+});
 
 onMounted(async () => {
   await jobStore.fetchJob(route.params.slug)
@@ -316,3 +343,4 @@ onMounted(async () => {
 })
 
 </script>
+

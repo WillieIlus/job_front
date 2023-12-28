@@ -57,6 +57,30 @@ const breadcrumbs = [
 
 const pageTitle = 'Jobs'
 
+const title = computed(() => {
+  const category = route.params.category || 'All';
+  const location = route.params.location || 'Kenya';
+  return `Browse ${category} Jobs in ${location}`;
+});
+
+const description = computed(() => {
+  const category = route.params.category || 'All';
+  const location = route.params.location || 'Kenya';
+  return `Check out these ${category.toLowerCase()} jobs in ${location.toLowerCase()}. Find your dream job with Alfajir Jobs.`;
+});
+
+useHead({
+  title: title.value,
+  titleTemplate: '%s - Alfajir Jobs',
+  meta: [
+    // ... other meta tags
+    { name: 'description', content: description.value },
+    { property: 'og:title', content: title.value },
+    { property: 'og:description', content: description.value },
+    { name: 'twitter:description', content: description.value },
+  ],
+});
+
 onMounted(async () => {
   await jobStore.fetchJobs()
 })
