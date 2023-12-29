@@ -5,17 +5,21 @@ import { useAccountStore } from './accounts'
 export const useJobStore = defineStore('job', {
   state: () => ({
     jobs: [],
+    currentPage: 1,
+    itemsPerPage: 12,
     job: null,
     loading: false,
     error: null,
     query: ""
   }),
-  getters: {
-    getJobs: (state) => state.jobs,
-    getJob: (state) => state.job,
-    getLoading: (state) => state.loading,
-    getError: (state) => state.error,
-    jobsCount: (state) => state.jobs.length,
+  getters: { 
+    paginatedJobs: (state) => {
+      const startIndex = (state.currentPage - 1) * state.itemsPerPage;
+      const endIndex = startIndex + state.itemsPerPage;
+      return state.jobs.slice(startIndex, endIndex);
+    },
+    totaljobs: (state) => state.jobs.length,
+    totalPages: (state) => Math.ceil(state.jobs.length / state.itemsPerPage),
   },
   actions: {
     async handleError(action) {
@@ -40,7 +44,7 @@ export const useJobStore = defineStore('job', {
         this.jobs = data;
       });
     },
-    
+
     async fetchJobsByUser(userId) {
       await this.handleError(async () => {
         const response = await fetch(`${BASE_URL}/jobs?userId=${userId}`);
@@ -87,8 +91,8 @@ export const useJobStore = defineStore('job', {
           //   'Authorization': 'Bearer ' + token,
           // },
           headers: headers,
-          body:data,
-        });if (!response.ok) {
+          body: data,
+        }); if (!response.ok) {
           throw new Error('Server responded with ' + response.status);
         }
         const responseData = await response.json();
@@ -145,6 +149,10 @@ export const useJobStore = defineStore('job', {
         });
         this.jobs = this.jobs.filter((job) => job.slug !== slug);
       });
+    },
+    setCurrentPage(page) {
+      const totalPages = Math.ceil(this.jobs.length / this.itemsPerPage);
+      this.currentPage = Math.max(1, Math.min(totalPages, page));
     },
   },
 })

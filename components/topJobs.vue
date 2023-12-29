@@ -56,7 +56,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-01.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-01.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -143,7 +143,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-02.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-02.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -233,7 +233,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-03.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-03.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -313,7 +313,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-04.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-04.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -399,7 +399,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-01.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-01.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -488,7 +488,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-02.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-02.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -574,7 +574,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-03.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-03.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -652,7 +652,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-04.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-04.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -736,7 +736,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-01.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-01.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -821,7 +821,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-02.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-02.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -907,7 +907,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-03.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-03.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -985,7 +985,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-04.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-04.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -1069,7 +1069,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-01.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-01.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -1155,7 +1155,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-02.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-02.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -1242,7 +1242,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-03.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-03.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -1320,7 +1320,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-04.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-04.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -1407,7 +1407,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-01.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-01.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -1493,7 +1493,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-02.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-02.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -1580,7 +1580,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-03.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-03.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>
@@ -1658,7 +1658,7 @@
                     <div class="grid items-center grid-cols-12">
                       <div class="col-span-12 lg:col-span-2">
                         <div class="mb-4 text-center mb-md-0">
-                          <a href="company-details.html"><img src="assets/images/featured-job/img-04.png" alt=""
+                          <a href="company-details.html"><img src="~/assets/images/featured-job/img-04.png" alt=""
                               class="mx-auto img-fluid rounded-3"></a>
                         </div>
                       </div>

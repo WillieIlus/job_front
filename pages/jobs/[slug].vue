@@ -37,12 +37,12 @@
                       <div class="col-span-12 lg:col-span-4">
                         <div class="flex gap-3 md:justify-end">
                           <div
-                            class="w-8 h-8 text-center text-gray-100 transition-all duration-300 bg-transparent border rounded cursor-pointer border-gray-100/50 hover:bg-red-600 hover:text-white hover:border-transparent dark:border-zinc-700">
-                            <i class="uil uil-heart-alt text-lg leading-[1.8]"></i>
+                            class="w-8 h-8 text-center text-gray-600 transition-all duration-300 bg-red-300 border rounded cursor-pointer border-gray-100/50 hover:bg-red-600 hover:text-white hover:border-transparent dark:border-zinc-700">
+                            <i class="uil uil-heart-alt text-lg leading-[1.8]"></i>{{ job.view_count }}
                           </div>
                           <div
-                            class="w-8 h-8 text-center text-gray-100 transition-all duration-300 bg-transparent border rounded cursor-pointer border-gray-100/50 hover:bg-red-600 hover:text-white hover:border-transparent dark:border-zinc-700">
-                            <i class="uil uil-setting text-lg leading-[1.8]"></i>
+                            class="w-8 h-8 text-center text-gray-600 transition-all duration-300 bg-red-300 border rounded cursor-pointer border-gray-100/50 hover:bg-red-600 hover:text-white hover:border-transparent dark:border-zinc-700">
+                            <i class="uil uil-setting text-lg leading-[1.8]"></i>{{ job.click_count }}
                           </div>
                         </div>
                       </div>
@@ -205,7 +205,7 @@
                 <div v-if="job.company" class="border rounded border-gray-100/30 dark:border-neutral-600/80">
                   <div class="p-6">
                     <div>
-                      <img src="assets/images/featured-job/img-02.png" alt="" class="mx-auto img-fluid">
+                      <img src="~/assets/images/featured-job/img-02.png" alt="" class="mx-auto img-fluid">
 
                       <div class="mt-4 text-center">
                         <h6 class="text-gray-900 text-17 dark:text-gray-50"> {{ job.company ? job.company.name : ''  }}</h6>
@@ -292,7 +292,7 @@ const { job, jobs, loading, error } = storeToRefs(jobStore)
 const route = useRoute()
 const router = useRouter()
 
-const jobData = (job ?? {  }).value?.title ?? 'Job Detail... ';
+const jobData = (job ?? {  }).value?.title ?? 'Job Detail';
 const locationData =  (job ?? { }).value?.location ?? '... '
 
 const breadcrumbs = [
@@ -305,7 +305,7 @@ const breadcrumbs = [
     to: '/jobs',
   },
   {
-    label: jobData || 'Job Details',
+    label: 'Job Details',
     to: route.fullPath,
   }
 ]

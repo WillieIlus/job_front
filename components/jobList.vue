@@ -65,6 +65,10 @@
                 <NuxtLink :to="`/categories/${job.category.slug}`" class="primary-link text-muted">{{ job.category.name }}
                 </NuxtLink>
               </li>
+              <li>Views :</li>
+              <li>{{ job.view_count }}</li>
+              <li>Clicks :</li>
+              <li>{{ job.click_count }}</li>
             </ul>
           </div>
           <!--end col-->

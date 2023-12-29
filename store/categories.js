@@ -5,6 +5,8 @@ import { useAccountStore } from './accounts'
 export const useCategoryStore = defineStore('category', {
   state: () => ({
     categories: [],
+    currentPage: 1,
+    itemsPerPage: 18,
     category: null,
     loading: false,
     error: null,
@@ -12,7 +14,13 @@ export const useCategoryStore = defineStore('category', {
   getters: {
     getCategories: (state) => state.categories,
     getCategory: (state) => state.category,
-    categoriesCount: (state) => state.categories.length,
+    paginatedCategories: (state) => {
+      const startIndex = (state.currentPage - 1) * state.itemsPerPage;
+      const endIndex = startIndex + state.itemsPerPage;
+      return state.categories.slice(startIndex, endIndex);
+    },
+    totalCategories: (state) => state.categories.length,
+    totalPages: (state) => Math.ceil(state.categories.length / state.itemsPerPage),
   },
   actions: {
     async fetchCategories() {
@@ -21,35 +29,36 @@ export const useCategoryStore = defineStore('category', {
         const response = await fetch(`${BASE_URL}/categories`);
         const data = await response.json();
         this.categories = data;
-      } catch(error) {
+      } catch (error) {
         console.error(error);
       } finally {
         this.loading = false;
       }
     },
-    async fetchCategory(slug){
+    async fetchCategory(slug) {
       this.loading = true;
       try {
         const response = await fetch(`${BASE_URL}/categories/${slug}`);
         const data = await response.json();
         this.category = data;
-      } catch(error) {
+      } catch (error) {
         console.error(error);
       } finally {
         this.loading = false;
       }
     },
-   
-    async createCategory(name, description){
+
+    async createCategory(name, description) {
       this.loading = true;
       const accountStore = useAccountStore()
       try {
         const response = await fetch(`${BASE_URL}/categories/`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json',
-          'Authorization': `Bearer ${accountStore.token}`
-        },
-          body: JSON.stringify({name, description}),
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${accountStore.token}`
+          },
+          body: JSON.stringify({ name, description }),
         });
         if (!response.ok) {
           const errorData = await response.json();
@@ -59,15 +68,15 @@ export const useCategoryStore = defineStore('category', {
         }
         const data = await response.json();
         this.categories.push(data);
-      } catch(error) {
+      } catch (error) {
         console.error(error);
         this.error = error.message;
       } finally {
         this.loading = false;
       }
     },
-    async updateCategory(slug, category){
-      try{
+    async updateCategory(slug, category) {
+      try {
         const response = await fetch(`${BASE_URL}/categories/${slug}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
@@ -81,13 +90,17 @@ export const useCategoryStore = defineStore('category', {
           return category;
         });
       }
-      catch(error){
+      catch (error) {
         console.error(error);
         this.error = error.message;
       } finally {
         this.loading = false;
       }
-    }
+    },
+    setCurrentPage(page) {
+      const totalPages = Math.ceil(this.categories.length / this.itemsPerPage);
+      this.currentPage = Math.max(1, Math.min(totalPages, page));
+    },
   }
 })
 

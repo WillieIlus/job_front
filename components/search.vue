@@ -93,4 +93,9 @@ onMounted(async () => {
   await categoryStore.fetchCategories()
   await locationStore.fetchLocations()
 })
+
+const props = defineProps({
+
+})
+
 </script>
