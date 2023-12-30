@@ -5,9 +5,8 @@
         <div class="flex justify-center items-center">
           <p class="mb-0 text-white/50">
             ©
-            <!-- Add text-2xl and text-white classes -->
             <span class="text-bold text-white">{{ year }}</span>
-            AlphajiriJobs by Alfajiri Jobs
+            Alfajiri Jobs
           </p>
         </div>
       </div>

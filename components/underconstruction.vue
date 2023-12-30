@@ -8,7 +8,7 @@
             <div class="col-span-12 lg:col-span-6 lg:col-start-4">
               <div class="py-10 text-center">
                 <div class="pb-5 mb-5">
-                  <img src="../assets/images/animat-rocket-color.gif" alt="" class="mx-auto h-36">
+                  <img src="~/assets/images/animat-rocket-color.gif" alt="" class="mx-auto h-36">
                 </div>
                 <h1 class="mb-2 text-gray-900 dark:text-white">This page is still under construction</h1>
                 <p class="pb-5 mb-5 text-gray-500 dark:text-gray-300">Start working with Alfajiri jobs that can provide everything

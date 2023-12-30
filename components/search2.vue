@@ -44,58 +44,22 @@ import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { Form, Field } from 'vee-validate'
 
-import { useCategoryStore } from '~/store/categories'
-import { useLocationStore } from '~/store/locations'
-import { storeToRefs } from 'pinia'
-
-const categoryStore = useCategoryStore()
-const locationStore = useLocationStore()
-const route = useRoute()
-
-const { categories } = storeToRefs(categoryStore)
-const { locations } = storeToRefs(locationStore)
-
-const searchTitle = ref('')
-const selectedCategory = ref('')
-const selectedLocation = ref('')
-const submitting = ref(false)
-
-const performSearch = async () => {
-  submitting.value = true
-  try {
-    await jobStore.fetchJobs({
-      title: searchTitle.value,
-      location: selectedLocation.value,
-      category: selectedCategory.value,
-    })
-  } catch (error) {
-    console.log(error)
-  } finally {
-    submitting.value = false
-  }
-}
-
-const debounce = (func, delay) => {
-  let timeoutId
-  return (...args) => {
-    clearTimeout(timeoutId)
-    timeoutId = setTimeout(() => {
-      func(...args)
-    }, delay)
-  }
-}
-
-const debouncedSearch = debounce(performSearch, 3000)
-
-watch(searchTitle, debouncedSearch)
-
-onMounted(async () => {
-  await categoryStore.fetchCategories()
-  await locationStore.fetchLocations()
+const props = defineProps({
+  'modelValue': String,
+  'name': String,
+  'id': String,
+  'options': Array,
 })
 
-const props = defineProps({
+const emit = defineEmits(['update:modelValue'])
 
+const value = computed({
+  get() {
+    return props.value
+  },
+  set(value) {
+    emit('update:modelValue', value)
+  }
 })
 
 </script>

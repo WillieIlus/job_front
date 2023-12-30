@@ -6,8 +6,8 @@
       <div class="mx-auto container-fluid">
         <div class="flex flex-wrap items-center justify-between mx-auto">
           <NuxtLink to="/" class="flex items-center">
-            <img src="assets/images/logo-dark.png" alt="" class="logo-dark h-[22px] block dark:hidden">
-            <img src="assets/images/logo-light.png" alt="" class="logo-dark h-[22px] hidden dark:block">
+            <img src="~/assets/images/logo-dark.png" alt="" class="logo-dark h-[22px] block dark:hidden">
+            <img src="~/assets/images/logo-light.png" alt="" class="logo-dark h-[22px] hidden dark:block">
           </NuxtLink>
           <button data-collapse-toggle="navbar-collapse" type="button"
             class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg navbar-toggler group lg:hidden hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
