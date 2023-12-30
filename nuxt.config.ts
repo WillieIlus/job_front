@@ -37,7 +37,6 @@ export default defineNuxtConfig({
      { src: '~/plugins/swiper.init', mode: 'client' },
      { src: '~/plugins/switcher', mode: 'client' },
   ],
-
 })
 
 

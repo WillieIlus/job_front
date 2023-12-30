@@ -9,12 +9,12 @@
           <div class="grid items-center grid-cols-12 rtl:gap-10">
             <div class="col-span-12 col-start-2">
               <div class="mb-3 text-center ltr:mr-14 rtl:ml-14">
-                <h1 class="mb-3 text-5xl leading-tight text-white fw-semibold">Search Between More Than
-                  <br><span class="text-yellow-500 fw-bold">1,000+</span>
+                <h1 class="mb-3 text-5xl leading-tight text-white fw-semibold">Find your dream jobs
+                  with
+                  <br><span class="text-yellow-500 fw-bold">Today</span> with Alfajiri
                   Jobs.
                 </h1>
-                <p class="text-white text-17">Find jobs, create trackable resumes and enrich your
-                  applications.</p>
+                <p class="text-white text-17">Explore endless opportunities, one click away.</p>
               </div>
               <!-- search form -->
               <Search />
@@ -25,14 +25,13 @@
         <img src="~/assets/images/bg-shape.png" alt="" class="absolute block -bottom-5 dark:hidden">
         <img src="~/assets/images/bg-shape-dark.png" alt="" class="absolute hidden -bottom-5 dark:block">
       </section>
-      <TopCategories :categories="paginatedCategories"/>
+      <TopCategories :categories="paginatedCategories" />
       <section class="py-20 bg-gray-50 dark:bg-neutral-700">
         <div class="container mx-auto">
           <div class="grid grid-cols-1 gap-5">
             <div class="mb-5 text-center">
-              <h3 class="mb-3 text-3xl text-gray-900 dark:text-gray-50">New & Random Jobs</h3>
-              <p class="mb-5 text-gray-500 whitespace-pre-line dark:text-gray-300">Post a job to tell us about
-                your project. We'll quickly match you with the right <br> freelancers.</p>
+              <h3 class="mb-3 text-3xl text-gray-900 dark:text-gray-50">Gateway to Fresh Opportunities</h3>
+              <p class="mb-5 text-gray-500 whitespace-pre-line dark:text-gray-300">Discover a world of possibilities: New jobs, every day.<br> freelancers.</p>
             </div>
           </div>
           <JobList :jobs="jobs" :loading="loading" :error="error" />

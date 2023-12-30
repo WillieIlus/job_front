@@ -8,8 +8,8 @@
           <div class="grid grid-cols-12 gap-y-10 lg:gap-10">
             <div class="col-span-12 lg:col-span-6 lg:col-start-4">
               <div class="mb-5 text-center">
-                <h4 class="mt-2 text-gray-900 text-22 dark:text-white">Browse Job By Categories</h4>
-                <p class="mt-2 text-gray-500 dark:text-gray-300">{{ '' }}</p>
+                <h4 class="mt-2 text-gray-900 text-22 dark:text-white">Explore Jobs by Categories</h4>
+                <p class="mt-2 text-gray-500 dark:text-gray-300">Dive into diversity: Your dream job awaits in every category.</p>
               </div>
             </div>
           </div>

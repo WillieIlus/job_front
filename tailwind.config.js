@@ -1,24 +1,24 @@
-// /** @type {import('tailwindcss').Config} */
-// export default {
-//  content: [
-//     "./components/**/*.{js,vue,ts}",
-//     "./layouts/**/*.vue",
-//     "./pages/**/*.vue",
-//     "./plugins/**/*.{js,ts}",
-//     "./app.vue",
-//     "./error.vue",
-//   ],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// }
+/** @type {import('tailwindcss').Config} */
+export default {
+ content: [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./app.vue",
+    "./error.vue",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
 
 // const { bottom } = require('@popperjs/core')
 const plugin = require('tailwindcss/plugin')
 
-// import { darken, lighten } from 'polished'
-// const primary = '#054826'
+import { darken, lighten } from 'polished'
+const primary = '#054826'
 
 module.exports = {
   darkMode: ['class', '[data-mode="dark"]'],
