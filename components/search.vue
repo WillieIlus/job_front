@@ -1,5 +1,5 @@
 <template>
-  <form action="#">
+  <form @submit.prevent="performSearch">
     <div class="registration-form">
       <div class="grid grid-cols-12">
         <div class="col-span-12 xl:col-span-3">

@@ -6,7 +6,11 @@ export const useCategoryStore = defineStore('category', {
   state: () => ({
     categories: [],
     currentPage: 1,
+<<<<<<< HEAD
     itemsPerPage: 18,
+=======
+    itemsPerPage: 12,
+>>>>>>> new-main-branch
     category: null,
     loading: false,
     error: null,

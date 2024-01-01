@@ -71,18 +71,30 @@ const pageTitle = route.params.slug || 'Category';
 
 onMounted(async () => {
   await fetchCategory(route.params.slug);
+<<<<<<< HEAD
   console.log('the value of this category is', category.value)
+=======
+>>>>>>> new-main-branch
   const categoryId = category.value.id || 1
   await fetchJobs({ category: categoryId })
 
 });
 
 
+<<<<<<< HEAD
 onMounted(async () => {
   await jobStore.fetchJob(route.params.slug)
   await jobStore.fetchJobs()
   await categoryStore.fetchCategories()
   await locationStore.fetchLocations()
 })
+=======
+// onMounted(async () => {
+//   await jobStore.fetchJob(route.params.slug)
+//   await jobStore.fetchJobs()
+//   await categoryStore.fetchCategories()
+//   await locationStore.fetchLocations()
+// })
+>>>>>>> new-main-branch
 
 </script> 
