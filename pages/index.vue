@@ -9,8 +9,7 @@
           <div class="grid items-center grid-cols-12 rtl:gap-10">
             <div class="col-span-12 col-start-2">
               <div class="mb-3 text-center ltr:mr-14 rtl:ml-14">
-                <h1 class="mb-3 text-5xl leading-tight text-white fw-semibold">Find your dream jobs
-                  with
+                <h1 class="mb-3 text-5xl leading-tight text-white fw-semibold">Find your dream job
                   <br><span class="text-yellow-500 fw-bold">Today</span> with Alfajiri
                   Jobs.
                 </h1>

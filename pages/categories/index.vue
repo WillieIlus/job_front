@@ -14,10 +14,9 @@
             </div>
           </div>
           <div class="grid grid-cols-12 gap-y-5 md:gap-8">
-            <div class="col-span-12 md:col-span-6 xl:col-span-4">
-              <ul class="mt-10 rounded bg-gray-50 dark:bg-neutral-700">
-                <li v-for="(category, index) in paginatedCategories" :key="category.id"
-                  class="px-4 py-2 bg-white rounded dark:bg-neutral-600">
+            <div v-for="(category, index) in paginatedCategories" :key="category.id" class="col-span-12 md:col-span-6 xl:col-span-4">
+              <ul class="mt-4 rounded bg-gray-50 dark:bg-neutral-700">
+                <li class="px-4 py-2 bg-white rounded dark:bg-neutral-600">
                   <NuxtLink :to="`/categories/${category.slug}`" class="text-gray-900 dark:text-white"> {{
                     category.name }} <span
                       class="px-2 py-1 rounded bg-sky-500/20 text-11 text-sky-500 ltr:float-right rtl:float-left">{{

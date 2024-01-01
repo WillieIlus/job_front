@@ -13,7 +13,7 @@
           <div class="col-span-12 lg:col-span-1">
             <div class="px-2 mb-4 text-center mb-md-0">
               <NuxtLink v-if="job.company" :to="`/companies/${job.company.slug}`">
-                <img :src="job.company.logo" alt="" class="mx-auto img-fluid rounded-3">
+                <img :src="job.company.logo" alt="" class="mx-auto img-fluid rounded-3 w-60">
               </NuxtLink>
             </div>
           </div>
@@ -74,17 +74,13 @@
           <!--end col-->
           <div class="col-span-12 mt-2 lg:col-span-6 lg:mt-0">
             <div class="ltr:lg:text-right rtl:lg:text-left dark:text-gray-50">
-              <NuxtLink v-if="job.company" :to="'mailto:' + job.email" data-bs-toggle="modal">Apply Now <i class="mdi mdi-chevron-double-right"></i></NuxtLink>
+              <NuxtLink :to="'mailto:' + job.email ?? job.company.email ?? '' " data-bs-toggle="modal">Apply Now <i
+                  class="mdi mdi-chevron-double-right"></i></NuxtLink>
             </div>
           </div>
           <!--end col-->
         </div>
         <!--end row-->
-      </div>
-      <div class="absolute top-4 ltr:right-4 rtl:left-4">
-        <div class="w-8 h-8 text-center text-white bg-red-600 rounded">
-          <a href="javascript:void(0)"><i class="uil uil-heart-alt text-lg leading-[1.9]"></i></a>
-        </div>
       </div>
     </div>
     <!-- end of load list  -->
