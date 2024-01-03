@@ -58,11 +58,7 @@
               </div>
               <div class="space-y-8 mt-14">
                 <JobList v-if="paginatedJobs" :jobs="paginatedJobs" :loading="loading" :error="error" />
-<<<<<<< HEAD
-               </div>
-=======
               </div>
->>>>>>> new-main-branch
               <!-- start pagination-->
               <section class="pb-20">
                 <div class="container mx-auto">
@@ -107,12 +103,6 @@ import { useCategoryStore } from '~/store/categories'
 import { useLocationStore } from '~/store/locations'
 import { storeToRefs } from 'pinia'
 
-<<<<<<< HEAD
-const jobStore = useJobStore()
-const route = useRoute()
-
-const { loading, error, paginatedJobs, totalPages, currentPage, setCurrentPage } = storeToRefs(jobStore)
-=======
 const categoryStore = useCategoryStore()
 const locationStore = useLocationStore()
 const jobStore = useJobStore()
@@ -120,7 +110,6 @@ const route = useRoute()
 
 const { categories } = storeToRefs(categoryStore)
 const { locations } = storeToRefs(locationStore)
->>>>>>> new-main-branch
 
 const { loading, error, paginatedJobs, totalPages, currentPage, setCurrentPage } = storeToRefs(jobStore)
 
@@ -135,10 +124,6 @@ const breadcrumbs = [
   }
 ]
 
-<<<<<<< HEAD
-onMounted(async () => {
-  await jobStore.fetchJobs()
-=======
 const searchTitle = ref('')
 const selectedCategory = ref('')
 const selectedLocation = ref('')
@@ -177,7 +162,6 @@ onMounted(async () => {
   await jobStore.fetchJobs()
   await categoryStore.fetchCategories()
   await locationStore.fetchLocations()
->>>>>>> new-main-branch
 })
 
 const pageTitle = 'Jobs'

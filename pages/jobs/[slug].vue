@@ -207,12 +207,7 @@
                 <div v-if="job.company" class="border rounded border-gray-100/30 dark:border-neutral-600/80">
                   <div class="p-6">
                     <div>
-<<<<<<< HEAD
-                      <img src="~/assets/images/featured-job/img-02.png" alt="" class="mx-auto img-fluid">
-=======
                       <img :src="job.company.logo" alt="Logo" class="mx-auto img-fluid">
->>>>>>> new-main-branch
-
                       <div class="mt-4 text-center">
                         <h6 class="text-gray-900 text-17 dark:text-gray-50"> {{ job.company ? job.company.name : 'N/A' }}
                         </h6>
@@ -302,13 +297,8 @@ const { job, jobs, loading, error } = storeToRefs(jobStore)
 const route = useRoute()
 const router = useRouter()
 
-<<<<<<< HEAD
-const jobData = (job ?? {  }).value?.title ?? 'Job Detail';
-const locationData =  (job ?? { }).value?.location ?? '... '
-=======
 const jobData = (job ?? {}).value?.title ?? 'Job Detail';
 const locationData = (job ?? {}).value?.location ?? '... '
->>>>>>> new-main-branch
 
 const breadcrumbs = [
   {
