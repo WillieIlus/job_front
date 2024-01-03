@@ -33,7 +33,7 @@
               <p class="mb-5 text-gray-500 whitespace-pre-line dark:text-gray-300">Discover a world of possibilities: New jobs, every day.<br> freelancers.</p>
             </div>
           </div>
-          <JobList :jobs="jobs" :loading="loading" :error="error" />
+          <JobList v-if="paginatedJobs" :jobs="paginatedJobs" :loading="loading" :error="error" />
         </div>
       </section>
 
@@ -46,9 +46,10 @@ import { useJobStore } from '~/store/jobs'
 import { useCategoryStore } from '~/store/categories';
 import { storeToRefs } from 'pinia'
 
+
 const categoryStore = useCategoryStore();
 const jobStore = useJobStore()
-const { jobs } = storeToRefs(jobStore)
+const { paginatedJobs } = storeToRefs(jobStore)
 const { paginatedCategories } = storeToRefs(categoryStore);
 
 onMounted(async () => {
