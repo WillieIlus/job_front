@@ -1,7 +1,10 @@
 import { defineConfig, searchForWorkspaceRoot } from 'vite'
 
 export default defineNuxtConfig({
-  // Your other options
+  sourcemap: {
+    server: true,
+    client: true
+  },
   vite: {
     server: {
       fs: {
