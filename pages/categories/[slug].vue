@@ -76,12 +76,4 @@ onMounted(async () => {
 
 });
 
-
-// onMounted(async () => {
-//   await jobStore.fetchJob(route.params.slug)
-//   await jobStore.fetchJobs()
-//   await categoryStore.fetchCategories()
-//   await locationStore.fetchLocations()
-// })
-
 </script> 

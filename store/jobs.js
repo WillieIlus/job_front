@@ -10,7 +10,7 @@ export const useJobStore = defineStore('job', {
     job: null,
     loading: false,
     error: null,
-    query: ""
+    query: "",
   }),
   getters: { 
     paginatedJobs: (state) => {

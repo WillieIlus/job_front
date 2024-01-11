@@ -208,7 +208,6 @@
                   <div class="p-6">
                     <div>
                       <img :src="job.company.logo" alt="Logo" class="mx-auto img-fluid">
-
                       <div class="mt-4 text-center">
                         <h6 class="text-gray-900 text-17 dark:text-gray-50"> {{ job.company ? job.company.name : 'N/A' }}
                         </h6>
