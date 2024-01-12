@@ -1,0 +1,1 @@
+import{a as t,f as s,h as o,N as a,o as r}from"./entry.bb66115f.js";const c={},l={lang:"en",dir:"ltr","data-mode":"light",class:"scroll-smooths group","data-theme-color":"blue"},n={class:"bg-white dark:bg-neutral-800 min-h-screen"};function d(e,_){return r(),s("html",l,[o("div",n,[a(e.$slots,"default")])])}const i=t(c,[["render",d]]);export{i as default};

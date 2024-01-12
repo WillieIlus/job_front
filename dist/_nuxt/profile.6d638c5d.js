@@ -1,0 +1,1 @@
+import{_ as c}from"./underconstruction.0a0ad88f.js";import{a as n,c as t,o as e}from"./entry.bb66115f.js";const r={};function _(s,a){const o=c;return e(),t(o)}const m=n(r,[["render",_]]);export{m as default};
