@@ -59,22 +59,42 @@
       <div class="px-4 py-3 bg-gray-50 dark:bg-neutral-700">
         <div class="grid grid-cols-12">
           <div class="col-span-12 lg:col-span-6">
-            <ul v-if="job.category" class="flex flex-wrap gap-2 text-gray-700 dark:text-gray-50">
-              <li><i class="uil uil-tag"></i> Category :</li>
-              <li>
-                <NuxtLink :to="`/categories/${job.category.slug}`" class="primary-link text-muted">{{ job.category.name }}
-                </NuxtLink>
+            <ul class="flex gap-2 text-gray-700 dark:text-gray-50">
+              <li v-if="job.category"><span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z" />
+                  </svg></span><span>
+                  <NuxtLink :to="`/categories/${job.category.slug}`" class="primary-link text-muted">{{ job.category.name
+                  }}
+                  </NuxtLink>
+                </span>
               </li>
-              <li>Views :</li>
-              <li>{{ job.view_count }}</li>
-              <li>Clicks :</li>
-              <li>{{ job.click_count }}</li>
+              <li> <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  </svg></span>
+                <span> {{ job.view_count }}</span>
+              </li>
+              <li> | </li>
+              <li><span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672Zm-7.518-.267A8.25 8.25 0 1 1 20.25 10.5M8.288 14.212A5.25 5.25 0 1 1 17.25 10.5" />
+                  </svg></span><span>
+                  {{ job.click_count }}</span>
+              </li>
             </ul>
           </div>
           <!--end col-->
           <div class="col-span-12 mt-2 lg:col-span-6 lg:mt-0">
             <div class="ltr:lg:text-right rtl:lg:text-left dark:text-gray-50">
-              <NuxtLink :to="'mailto:' + job.email ?? job.company.email ?? '' " data-bs-toggle="modal">Apply Now <i
+              <NuxtLink :to="'mailto:' + job.email ?? job.company.email ?? ''" data-bs-toggle="modal">Apply Now <i
                   class="mdi mdi-chevron-double-right"></i></NuxtLink>
             </div>
           </div>
