@@ -83,6 +83,7 @@ const toggleNavbar = () => {
 const navItems = [
   { name: 'Home', link: '/', current: route.name === 'home' },
   { name: 'Jobs', link: '/jobs', current: route.name.includes('jobs') },
+  { name: 'Companies', link: '/companies', current: route.name.includes('companies') },
   { name: 'Categories', link: '/categories', current: route.name.includes('categories') },
 ]
 

@@ -17,9 +17,12 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   app: {
     head: {
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+      ],
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
-    }
+    },
   },
   modules: [
     '@nuxtjs/tailwindcss',
