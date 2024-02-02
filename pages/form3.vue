@@ -11,18 +11,18 @@
                 <FormsInput v-model="name" type="text" label="Country Name" name="name" id="name"/>
                 <FormsInput v-model="code" type="text" label="Country Code" name="code" id="code"/>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700">Flag</label>
-                  <input type="file" ref="flagInput" placeholder="Country Flag" />
-                </div>
+      <label class="block text-sm font-medium text-gray-700">Flag</label>
+      <input type="file" @change="onFileChange" placeholder="Country Flag" />
+    </div>
               </div>
               <div class="flex justify-center">
-                <ButtonsRed class="mx-7 pr-3 " type="button">
+                <button class="mx-7 pr-3 " type="button">
                   Cancel
-                </ButtonsRed>
-                <ButtonsGreen class="pl-3" :disabled="submitting" type="submit">
+                </button>
+                <button class="pl-3" :disabled="submitting" type="submit">
                   <span v-if="submitting">Creating Country…</span>
                   <span v-else>Create Country</span>
-                </ButtonsGreen>
+                </button>
               </div>
             </Form>
           </div>
@@ -38,40 +38,57 @@ import { ref } from 'vue';
 import { Form, Field, ErrorMessage } from 'vee-validate';
 import * as yup from 'yup';
 import { useCountriesStore } from '~/store/countries';
+import { useRouter } from 'vue-router'
+
 
 const countriesStore = useCountriesStore();
+const router = useRouter()
 
 const name = ref('');
 const code = ref('');
-const flagInput = ref(null);
+// const flagInput = ref(null);
+const flag = ref(null)
 
+
+const onFileChange = (e) => {
+  flag.value = e.target.files[0]
+}
 const schema = yup.object({
   name: yup.string().required(),
   code: yup.string(),
   flag: yup.mixed()
 });
 
-const onSubmit = async () => {
-  const data = new FormData();
-  data.append('name', name.value);
-  data.append('code', code.value);
 
-  if (flagInput.value && flagInput.value.files.length > 0) {
-    data.append('flag', flagInput.value.files[0]);
+const onSubmit = async () => {
+  const data = new FormData()
+  data.append('name', name.value)
+  data.append('code', code.value)
+  if (flag.value) {
+    data.append('flag', flag.value)
   }
-  console.log(data)
 
   try {
-    const response = await countriesStore.createCountry(data);
+    const response = await countriesStore.createCountry(data)
     if (!response) {
-      throw new Error('Server responded with ' + response);
+      throw new Error('Server responded with ' + response)
     }
-    const responseData = await response.json();
-    console.log(responseData);
+
+    // Clear the form
+    name.value = ''
+    code.value = ''
+    flag.value = null
+
+    // Display success message
+    success('Country created successfully')
+
+    router.push(`/`)
+    // router.push(`/countries/${responseData.id}`) // replace with the correct path
   } catch (error) {
-    console.error('Error submitting form:', error);
+    console.error('Error submitting form:', error)
+    error('Failed to create country. Please try again.')
   }
-};
+}
 
 const breadcrumbs = [
   { label: 'Home', to: '/' },

@@ -27,16 +27,19 @@
                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                   <img class="w-8 h-8 rounded-full ltr:xl:mr-2 rtl:xl:ml-2"
                     src="https://plchldr.co/i/200x200?bg=808080&text=USER" alt="Header Avatar">
-                  <span class="hidden fw-medium xl:block dark:text-gray-50">User</span>
+                  <span class="hidden fw-medium xl:block dark:text-gray-50">{{ user ? user.first_name : 'User' }}</span>
                 </button>
                 <ul
                   class="absolute top-auto z-50 hidden w-48 p-3 list-none bg-white border rounded shadow-lg dropdown-menu border-gray-500/20 xl:ltr:-left-3 ltr:-left-32 rtl:-right-3 dark:bg-neutral-800"
                   id="profile/log" aria-labelledby="navNotifications">
 
                   <li v-for="item in authNavigation" class="p-2 dropdown-item group/dropdown dark:text-gray-300">
-                    <NuxtLink
+                    <NuxtLink v-if="!item.action"
                       class="text-15 font-medium text-gray-800  group-data-[theme-color=violet]:group-hover/dropdown:text-violet-500 group-data-[theme-color=sky]:group-hover/dropdown:text-sky-500 group-data-[theme-color=red]:group-hover/dropdown:text-red-500 group-data-[theme-color=green]:group-hover/dropdown:text-green-500 group-data-[theme-color=pink]:group-hover/dropdown:text-pink-500 group-data-[theme-color=blue]:group-hover/dropdown:text-blue-500 group-hover:pl-1.5 transition-all duration-300 ease-in dark:text-gray-50"
                       :to="item.link">{{ item.name }}</NuxtLink>
+                    <button v-else @click="item.action"
+                      class="text-15 font-medium text-gray-800  group-data-[theme-color=violet]:group-hover/dropdown:text-violet-500 group-data-[theme-color=sky]:group-hover/dropdown:text-sky-500 group-data-[theme-color=red]:group-hover/dropdown:text-red-500 group-data-[theme-color=green]:group-hover/dropdown:text-green-500 group-data-[theme-color=pink]:group-hover/dropdown:text-pink-500 group-data-[theme-color=blue]:group-hover/dropdown:text-blue-500 group-hover:pl-1.5 transition-all duration-300 ease-in dark:text-gray-50">{{
+                        item.name }}</button>
                   </li>
                 </ul>
               </div>
@@ -67,11 +70,13 @@ import { useRoute } from 'vue-router'
 import { storeToRefs } from 'pinia';
 import { Bars3Icon, BellIcon, XMarkIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/vue/24/outline'
 import { useAccountStore } from '~/store/accounts';
+import { useRouter } from 'vue-router'
 
 
 const accountStore = useAccountStore()
 const { user, isLoggedIn } = storeToRefs(accountStore)
 const route = useRoute()
+const router = useRouter()
 
 const isNavbarOpen = ref(false);
 
@@ -79,6 +84,23 @@ const toggleNavbar = () => {
   isNavbarOpen.value = !isNavbarOpen.value;
 };
 
+const logout = async () => {
+  try {
+    await accountStore.logout()
+    router.push('/accounts/login')
+  } catch (error) {
+    console.error('Failed to logout:', error)
+  }
+}
+
+const login = async () => {
+  try {
+    await accountStore.login()
+    router.push('/')
+  } catch (error) {
+    console.error('Failed to login:', error)
+  }
+}
 
 const navItems = [
   { name: 'Home', link: '/', current: route.name === 'home' },
@@ -88,7 +110,7 @@ const navItems = [
 ]
 
 const authNavigation = computed(() => {
-  return isLoggedIn ? userNavigation : loginNavigation;
+  return isLoggedIn.value ? userNavigation : loginNavigation;
 })
 
 const userNavigation = [
