@@ -78,18 +78,37 @@ export const useAccountStore = defineStore('account', {
       // console.log('getUser', this.token, this.user)
     },
 
-    async updateUser(first_name, phone) {
-      const response = await fetch(`${BASE_URL}/accounts/users/me/`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${this.token}`
-        },
-        body: JSON.stringify({ first_name, phone }),
-      })
-      const data = await response.json()
-      this.user = data
-      console.log(data)
+    // async updateUser(data) {
+    //   const response = await fetch(`${BASE_URL}/accounts/users/me/`, {
+    //     method: 'PATCH',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       'Authorization': `Bearer ${this.token}`
+    //     },
+    //     body: JSON.stringify({ data }),
+    //   })
+    //   const data = await response.json()
+    //   this.user = data
+    //   console.log(data)
+    // },
+    async updateUser(data) {
+      try{
+        const response = await fetch(`${BASE_URL}/accounts/users/me/`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${this.token}`
+          },
+          body: data,
+        });
+        if (!response.ok) {
+          throw new Error('Server responded with ' + response.status);
+        }
+        const responseData = await response.json();
+        console.log(responseData);
+      } catch (error) {
+        console.error('Error submitting form:', error);
+          }
     },
 
     logout() {

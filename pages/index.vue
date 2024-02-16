@@ -1,4 +1,47 @@
 <template>
+  <div>
+    <Head>
+      <title>Alfajiri Jobs</title>
+      <meta name="description" content="Alfajiri Jobs is a job board for job seekers and employers. Find your dream job today with Alfajiri Jobs." />
+      <meta name="keywords" content="job board, job portal, job search, job listing, job site, job website, job board website, job board portal, job board theme, job board template, job board software, job board script, job board platform, job board app, job board application, job board design, job board development, job board directory, job board directory theme, job board directory template, job board directory software, job board directory script, job board directory platform, job board directory app, job board directory application, job board directory design, job board directory development, job board directory website, job board directory portal, job board directory theme, job board directory template, job board directory software, job board directory script, job board directory platform, job board directory app, job board directory application, job board directory design, job board directory development, job board directory website, job board directory portal" />
+      <meta name="author" content="Alfajiri Jobs" />
+      <meta name="robots" content="index, follow" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="theme-color" content="#ffffff" />
+      <meta name="msapplication-TileColor" content="#ffffff" />
+      <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+      <meta name="msapplication-config" content="/browserconfig.xml" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="apple-mobile-web-app-title" content="Alfajiri Jobs" />
+      <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+      <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+      <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+      <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+      <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" />
+      <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" />
+      <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
+      <!-- twitter card-->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@alfajirijobs" />
+      <meta name="twitter:creator" content="@alfajirijobs" />
+      <meta name="twitter:title" content="Alfajiri Jobs" />
+      <meta name="twitter:description" content="Alfajiri Jobs is a job board for job seekers and employers. Find your dream job today with Alfajiri Jobs." />
+      <meta name="twitter:image" content="https://alfajirijobs.com/assets/images/home/img-01.png" />
+      <meta name="twitter:image:alt" content="Alfajiri Jobs" />
+      <!-- Open Graph -->
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Alfajiri Jobs" />
+      <meta property="og:description" content="Alfajiri Jobs is a job board for job seekers and employers. Find your dream job today with Alfajiri Jobs." />
+      <meta property="og:url" content="https://alfajirijobs.com" />
+      <meta property="og:site_name" content="Alfajiri Jobs" />
+      <meta property="og:image" content="https://alfajirijobs.com/assets/images/home/img-01.png" />
+      <meta property="og:image:secure_url" content="https://alfajirijobs.com/assets/images/home/img-01.png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Alfajiri Jobs" />
+    </Head>
+  </div>
   <div class="main-content">
     <div class="page-content">
       <!-- start home -->

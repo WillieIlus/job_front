@@ -92,28 +92,19 @@ const onSubmit = async (values) => {
     console.log('Submitting login...');
     await accountStore.login(values.email, values.password);
     console.log('Login successful');
+    // No error, navigate to the jobs page
+    router.push('/accounts');
   } catch (error) {
     console.log(error)
     // Handle error with status code 401
     if (error.response && error.response.status === 401) {
-      error = 'Invalid email or password' // Set the error message
-      console.log(error)
+      error.value = 'Invalid email or password'; // Set the error message
     } else {
-      error = 'An error occurred. Please try again.' // Set the error message for other errors
-      console.log(error)
+      error.value = 'An error occurred. Please try again.'; // Set the error message for other errors
     }
-    if (!error.value) {
-      router.push('/accounts/dashboard')
-      error = 'An error occurred. Please try again.' // Set the error message for other errors
-      console.log(error)
-    }
+    console.log(error.value);
   } finally {
-    submitting.value = false
-    // Only navigate if there's no error
-    if (!error.value) {
-      router.push('/jobs');
-    }
-
+    submitting.value = false;
   }
 }
 </script>

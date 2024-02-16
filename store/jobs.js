@@ -45,9 +45,9 @@ export const useJobStore = defineStore('job', {
       });
     },
 
-    async fetchJobsByUser(userId) {
+    async fetchJobsByUser() {
       await this.handleError(async () => {
-        const response = await fetch(`${BASE_URL}/jobs?userId=${userId}`);
+        const response = await fetch(`${BASE_URL}/jobs/my`);
         const data = await response.json();
         this.jobs = data;
       });
@@ -85,35 +85,20 @@ export const useJobStore = defineStore('job', {
         };
         const response = await fetch(`${BASE_URL}/jobs/`, {
           method: 'POST',
-          // headers: {
-          //   // 'Content-Type': 'application/json',
-          //   // 'Content-Type': 'multipart/form-data',
-          //   'Authorization': 'Bearer ' + token,
-          // },
           headers: headers,
           body: data,
-        }); if (!response.ok) {
+        }); 
+        console.log('The response is:', response);
+        if (!response.ok) {
           throw new Error('Server responded with ' + response.status);
         }
         const responseData = await response.json();
-        console.log(responseData);
+        console.log('The received data is:', responseData )
       } catch (error) {
         console.error('Error submitting form:', error);
         this.error = error;
       }
     },
-
-    //     if (response.status === 400) {
-    //       const errorData = await response.json();
-    //       throw new Error(`Bad Request Error: ${JSON.stringify(errorData)}`);
-    //     }
-
-    //     const data = await response.json();
-    //     this.jobs.push(data);
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-    // },
 
     async updateJob(slug, job) {
       this.loading = true;

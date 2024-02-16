@@ -1,4 +1,26 @@
 <template>
+  <div>
+    <Head>
+      <title> Alfajirijobs | Companies </title>
+      <meta name="description" content="Popular companies in Kenya" />
+      <meta name="twitter:site" content="@alfajirijobs" />
+      <meta name="twitter:creator" content="@alfajirijobs" />
+      <meta name="twitter:title" content="Companies" />
+      <meta name="twitter:description" content="Popular companies in Kenya" />
+      <meta name="twitter:image" content="https://alfajirijobs.com/assets/images/featured-job/img-01.png" />
+      <meta name="twitter:image:alt" content="Companies" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Companies" />
+      <meta property="og:description" content="Popular companies in Kenya" />
+      <meta property="og:url" content="https://alfajirijobs.com" />
+      <meta property="og:site_name" content="Companies" />
+      <meta property="og:image" content="https://alfajirijobs.com/assets/images/featured-job/img-01.png" />
+      <meta property="og:image:secure_url" content="https://alfajirijobs.com/assets/images/featured-job/img-01.png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Companies" />
+    </Head>
+  </div>
   <div class="main-content">
     <div class="page-content">
 
@@ -14,6 +36,7 @@
               </div>
             </div><!--end col-->
 
+            
             <div class="col-span-12 lg:col-span-4">
               <div class="candidate-list-widgets">
                 <div class="grid items-center grid-cols-12 gap-3">
@@ -64,16 +87,16 @@ import { useCategoryStore } from '~/store/categories'
 import { useAccountStore } from '~/store/accounts'
 import { useLocationStore } from '~/store/locations'
 
-const companiesStore = useCompanyStore()
+const companyStore = useCompanyStore()
 const categoriesStore = useCategoryStore()
 const accountStore = useAccountStore()
 const locationStore = useLocationStore()
 
-const { companies, loading, error } = storeToRefs(companiesStore)
+const { companies, loading, error } = storeToRefs(companyStore)
 const { categories } = storeToRefs(categoriesStore)
 
 const fetchCompanies = async () => {
-  await companiesStore.fetchCompanies()
+  await companyStore.fetchCompanies()
 }
 
 const fetchCategories = async () => {

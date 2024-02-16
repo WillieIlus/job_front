@@ -58,6 +58,17 @@
                 </button>
               </li>
             </ul>
+            <ul v-if="isLoggedIn" class="flex flex-col items-start font-medium lg:mt-0 lg:mb-0 lg:items-center lg:flex-row"
+              id="navigation-menu">
+              <li v-for="item in formNavigation" class="relative dropdown">
+                <button class=" p-3 flex flex-col items-start font-medium lg:mt-0 lg:mb-0 lg:items-center lg:flex-row text-white btn group-data-[theme-color=violet]:bg-violet-500 group-data-[theme-color=sky]:bg-sky-500 group-data-[theme-color=red]:bg-red-500 group-data-[theme-color=green]:bg-green-500 group-data-[theme-color=pink]:bg-pink-500 group-data-[theme-color=blue]:bg-blue-500 border-transparent focus:ring group-data-[theme-color=violet]:focus:ring-violet-500/20 group-data-[theme-color=sky]:focus:ring-sky-500/20 group-data-[theme-color=red]:focus:ring-red-500/20 group-data-[theme-color=green]:focus:ring-green-500/20 group-data-[theme-color=pink]:focus:ring-pink-500/20 group-data-[theme-color=blue]:focus:ring-blue-500/20 "
+                  data-bs-toggle="dropdown">
+                  <NuxtLink :to="item.link"
+                    class="py-5 text-gray-800 lg:px-4 dropdown-toggle dark:text-gray-50 lg:h-[70px]"
+                    data-bs-toggle="dropdown">{{ item.name }}</NuxtLink>
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -115,7 +126,13 @@ const authNavigation = computed(() => {
 
 const userNavigation = [
   { name: 'Profile', link: '/accounts/profile', current: route.name.includes('profile') },
-  { name: 'Settings', link: '/accounts', current: route.name.includes('settings') },
+  { name: 'Settings', link: '/accounts/settings', current: route.name.includes('settings') },
+  { name: 'Logout', action: logout },
+]
+
+const formNavigation = [
+  { name: 'Add Job', link: '/jobs/form', current: route.name.includes('add-job') },
+  { name: 'Add Company', link: '/companies/form', current: route.name.includes('add-company') }
 ]
 
 const loginNavigation = [

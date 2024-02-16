@@ -68,42 +68,36 @@ export const useCompanyStore = defineStore('company', {
         this.loading = false;
       }
     },
-
-
-    async fetchCompany(slug) {
-      this.loading = true
-      await this.handleError(async () => {
-        const response = await fetch(`${BASE_URL}/companies/${slug}/`);
-        const data = await response.json();
-        this.company = data;
-        this.loading = false
-      });
-    },
-
-    async createCompany(values) {
+    async createCompany(data) {
       try {
         const accountStore = useAccountStore();
         const token = accountStore.token;
-
+        const headers = {
+          'Authorization': 'Bearer ' + token
+        };
         const response = await fetch(`${BASE_URL}/companies/`, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + token,
-          },
-          body: JSON.stringify(values),
+          headers: headers,
+          body: data,
         });
-
-        if (response.status === 400) {
-          const errorData = await response.json();
-          throw new Error(`Bad Request Error: ${JSON.stringify(errorData)}`);
+        if (!response.ok) {
+          throw new Error('Server responded with ' + response.status);
         }
-
-        const data = await response.json();
-        this.companies.push(data);
+        const responseData = await response.json();
+        console.log(responseData);
       } catch (error) {
-        throw error;
+        console.error('Error submitting form:', error);
       }
+    },
+    
+    async fetchCompany(slug) {
+      this.loading = true;
+      await this.handleError(async () => {
+        const response = await fetch(`${BASE_URL}/companies/${slug}`);
+        const data = await response.json();
+        this.company = data;
+        this.loading = false;
+      });
     },
 
     async updateCompany(company) {

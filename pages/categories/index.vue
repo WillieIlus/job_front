@@ -1,4 +1,27 @@
 <template>
+  <div>
+    <Head>
+      <title> Alfajirijobs | Categories </title>
+      <meta name="description" content="Explore jobs by categories" />
+      <meta name="twitter:site" content="@alfajirijobs" />
+      <meta name="twitter:creator" content="@alfajirijobs" />
+      <meta name="twitter:title" content="Categories" />
+      <meta name="twitter:description" content="Explore jobs by categories" />
+      <meta name="twitter:image" content="https://alfajirijobs.com/assets/images/featured-job/img-01.png" />
+      <meta name="twitter:image:alt" content="Categories" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Categories" />
+      <meta property="og:description" content="Explore jobs by categories" />
+      <meta property="og:url" content="https://alfajirijobs.com" />
+      <meta property="og:site_name" content="Categories" />
+      <meta property="og:image" content="https://alfajirijobs.com/assets/images/featured-job/img-01.png" />
+      <meta property="og:image:secure_url" content="https://alfajirijobs.com/assets/images/featured-job/img-01.png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Categories" />
+    </Head>
+  </div>
+  
   <NavigationBreadcrumbs :items="breadcrumbs" :pageTitle="pageTitle" />
   <div class="main-content">
     <div class="page-content">

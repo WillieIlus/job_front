@@ -1,4 +1,27 @@
 <template>
+  <div>
+    <Head>
+      <title> Alfajirijobs | Locations </title>
+      <meta name="description" content="Popular locations in Kenya" />
+      <meta name="twitter:site" content="@alfajirijobs" />
+      <meta name="twitter:creator" content="@alfajirijobs" />
+      <meta name="twitter:title" content="Locations" />
+      <meta name="twitter:description" content="Popular locations in Kenya" />
+      <meta name="twitter:image" content="https://alfajirijobs.com/assets/images/featured-job/img-01.png" />
+      <meta name="twitter:image:alt" content="Locations" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Locations" />
+      <meta property="og:description" content="Popular locations in Kenya" />
+      <meta property="og:url" content="https://alfajirijobs.com" />
+      <meta property="og:site_name" content="Locations" />
+      <meta property="og:image" content="https://alfajirijobs.com/assets/images/featured-job/img-01.png" />
+      <meta property="og:image:secure_url" content="https://alfajirijobs.com/assets/images/featured-job/img-01.png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Locations" />
+    </Head>
+  </div>
+  
   <div class="main-content">
     <div class="page-content">
 

@@ -1,4 +1,27 @@
 <template>
+  <div>
+    <Head>
+      <title> Alfajirijobs | Jobs </title>
+      <meta name="description" content="Alfajiri Jobs is a job board for job seekers and employers. Find your dream job today with Alfajiri Jobs." />
+      <meta name="twitter:site" content="@alfajirijobs" />
+      <meta name="twitter:creator" content="@alfajirijobs" />
+      <meta name="twitter:title" content="Alfajiri Jobs" />
+      <meta name="twitter:description" content="Alfajiri Jobs is a job board for job seekers and employers. Find your dream job today with Alfajiri Jobs." />
+      <meta name="twitter:image" content="https://alfajirijobs.com/assets/images/home/img-01.png" />
+      <meta name="twitter:image:alt" content="Alfajiri Jobs" />
+      <!-- Open Graph -->
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Alfajiri Jobs" />
+      <meta property="og:description" content="Alfajiri Jobs is a job board for job seekers and employers. Find your dream job today with Alfajiri Jobs." />
+      <meta property="og:url" content="https://alfajirijobs.com" />
+      <meta property="og:site_name" content="Alfajiri Jobs" />
+      <meta property="og:image" content="https://alfajirijobs.com/assets/images/home/img-01.png" />
+      <meta property="og:image:secure_url" content="https://alfajirijobs.com/assets/images/home/img-01.png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Alfajiri Jobs" />          
+    </Head>
+  </div>
   <div class="main-content">
     <div class="page-content">
       <NavigationBreadcrumbs :items="breadcrumbs" :pageTitle="pageTitle" />
