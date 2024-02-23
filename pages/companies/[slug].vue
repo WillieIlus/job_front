@@ -1,24 +1,6 @@
 <template>
   <div>
     <Head>
-      <title> Alfajirijobs | {{  company.name }} </title>
-      <meta name="description" content="{{ company.description }}" />
-      <meta name="twitter:site" content="@alfajirijobs" />
-      <meta name="twitter:creator" content="@alfajirijobs" />
-      <meta name="twitter:title" content="{{ company.name }}" />
-      <meta name="twitter:description" content="{{ company.description }}" />
-      <meta name="twitter:image" content="https://alfajirijobs.com/assets/images/featured-job/img-01.png" />
-      <meta name="twitter:image:alt" content="{{ company.name }}" />
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="{{ company.name }}" />
-      <meta property="og:description" content="{{ company.description }}" />
-      <meta property="og:url" content="https://alfajirijobs.com" />
-      <meta property="og:site_name" content="{{ company.name }}" />
-      <meta property="og:image" content="https://alfajirijobs.com/assets/images/featured-job/img-01.png" />
-      <meta property="og:image:secure_url" content="https://alfajirijobs.com/assets/images/featured-job/img-01.png" />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="{{ company.name }}" />
     </Head>
     </div>
   <div class="main-content">

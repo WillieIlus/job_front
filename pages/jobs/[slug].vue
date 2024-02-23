@@ -1,28 +1,6 @@
 <template>
   <div>
     <Head>
-      <title> Alfajirijobs | {{ job.title }} </title>
-      <!-- job.description for metatag description-->
-      <meta name="description" content="{{ job.description }}" />
-      <meta property="og:title" content="{{ job.title }}" />
-      <meta property="og:description" content="{{ job.description }}" />
-      <meta property="og:url" content="https://alfajirijobs.com" />
-      <meta property="og:site_name" content="Alfajiri Jobs" />
-      <meta property="og:image" content="{{ job.image }}" />
-      <meta property="og:image:secure_url" content="{{ job.image }}" />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="{{ job.title }}" />
-      <meta name="twitter:title" content="{{ job.title }}" />
-      <meta name="twitter:description" content="{{ job.description }}" />
-      <meta name="twitter:image" content="{{ job.image }}" />
-      <meta name="twitter:image:alt" content="{{ job.title }}" />
-      <meta name="twitter:site" content="@alfajirijobs" />
-      <meta name="twitter:creator" content="@alfajirijobs" />
-      <meta name="twitter:title" content="Alfajiri Jobs" />
-      <meta name="twitter:description" content="{{ job.description }}" />
-      <meta name="twitter:image" content="{{ job.image }}" />
-      <meta name="twitter:image:alt" content="{{ job.title }}" />
     </Head>
   </div>
   <div v-if="loading">
