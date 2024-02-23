@@ -55,7 +55,7 @@ const pageTitle = 'route.params.slug' || 'Location'
 const { fetchLocation } = locationStore;
 
 onMounted(async () => {
-  await fetchLocation(router.currentRoute.value.params.slug);
+  await fetchLocation(route.params.slug)
 });
 
 

@@ -1,14 +1,15 @@
 <template>
   <div>
+
     <Head>
     </Head>
   </div>
   <div v-if="loading">
     loading
   </div>
-  <div v-else-if="error">
+  <div v-if="error">
     error</div>
-  <div v-else>
+  <div v-if="job">
     <div class="main-content">
       <div class="page-content">
         <NavigationBreadcrumbs :items="breadcrumbs" :pageTitle="pageTitle" />
@@ -20,20 +21,21 @@
                 <div class="border rounded-md border-gray-100/30 dark:border-neutral-600/80">
                   <div class="relative">
                     <!-- Use object-cover to fill the container -->
-                    <img v-if="job.image" :src="job.image" alt="" class="rounded-md img-fluid mb-7 object-cover">
+                    <img v-if="job?.image" :src="job.image" alt="" class="rounded-md img-fluid mb-7 object-cover">
                     <div class="absolute z-20 -bottom-7 left-7">
                       <!-- Use w-5 and h-5 to set the logo size to 20px -->
-                      <img :src="job.company.logo" :alt="job.company.title" class="rounded-md img-fluid w-24 h-24">
+                      <img src="" :alt="job?.company?.title || ''"
+                        class="rounded-md img-fluid w-24 h-24">
                     </div>
                   </div>
                   <div class="p-6">
                     <div class="grid grid-cols-12">
                       <div class="col-span-12 lg:col-span-8">
                         <div class="relative">
-                          <h5 class="mb-1 text-gray-900 dark:text-gray-50">{{ job.title }}</h5>
+                          <h5 class="mb-1 text-gray-900 dark:text-gray-50">{{ job?.title || '' }}</h5>
                           <ul class="flex gap-4 text-gray-500 dark:text-gray-300">
                             <li>
-                              <i class="mdi mdi-account"></i> {{ job.vacancies }} Vacancy(ies)
+                              <i class="mdi mdi-account"></i> {{ job?.vacancies || '' }} Vacancy(ies)
                             </li>
                           </ul>
                         </div>
@@ -110,7 +112,7 @@
                   <JobList :jobs="jobs" />
 
                   <div class="mt-4 text-center">
-                    <NuxtLink :to="`/categories/${job.category.slug}`"
+                    <NuxtLink 
                       class="font-medium text-gray-900 dark:text-gray-50">View More <i class="mdi mdi-arrow-right"></i>
                     </NuxtLink>
                   </div>
@@ -148,7 +150,7 @@
                             class="uil uil-location-point icon group-data-[theme-color=violet]:bg-violet-500/20 group-data-[theme-color=sky]:bg-sky-500/20 group-data-[theme-color=red]:bg-red-500/20 group-data-[theme-color=green]:bg-green-500/20 group-data-[theme-color=pink]:bg-pink-500/20 group-data-[theme-color=blue]:bg-blue-500/20 h-12 w-12 text-center leading-[2.4] text-xl group-data-[theme-color=violet]:text-violet-500 group-data-[theme-color=sky]:text-sky-500 group-data-[theme-color=red]:text-red-500 group-data-[theme-color=green]:text-green-500 group-data-[theme-color=pink]:text-pink-500 group-data-[theme-color=blue]:text-blue-500 rounded-full"></i>
                           <div class="ltr:ml-4 rtl:mr-4">
                             <h6 class="mb-2 text-sm text-gray-900 dark:text-gray-50">Location</h6>
-                            <p class="text-gray-500 dark:text-gray-300"> {{ job.location ? job.location.name : '' }}</p>
+                            <p class="text-gray-500 dark:text-gray-300"></p>
                           </div>
                         </div>
                       </li>
@@ -180,7 +182,7 @@
                             class="uil uil-building icon group-data-[theme-color=violet]:bg-violet-500/20 group-data-[theme-color=sky]:bg-sky-500/20 group-data-[theme-color=red]:bg-red-500/20 group-data-[theme-color=green]:bg-green-500/20 group-data-[theme-color=pink]:bg-pink-500/20 group-data-[theme-color=blue]:bg-blue-500/20 h-12 w-12 text-center leading-[2.4] text-xl group-data-[theme-color=violet]:text-violet-500 group-data-[theme-color=sky]:text-sky-500 group-data-[theme-color=red]:text-red-500 group-data-[theme-color=green]:text-green-500 group-data-[theme-color=pink]:text-pink-500 group-data-[theme-color=blue]:text-blue-500 rounded-full"></i>
                           <div class="ltr:ml-4 rtl:mr-4">
                             <h6 class="mb-2 text-sm text-gray-900 dark:text-gray-50">Category</h6>
-                            <p class="text-gray-500 dark:text-gray-300"> {{ job.category.name ?? 'N/A' }}</p>
+                            <p class="text-gray-500 dark:text-gray-300"> </p>
                           </div>
                         </div>
                       </li>
@@ -211,9 +213,9 @@
                 <div v-if="job.company" class="border rounded border-gray-100/30 dark:border-neutral-600/80">
                   <div class="p-6">
                     <div>
-                      <img :src="job.company.logo" alt="Logo" class="mx-auto img-fluid">
+                      <img src="" alt="Logo" class="mx-auto img-fluid">
                       <div class="mt-4 text-center">
-                        <h6 class="text-gray-900 text-17 dark:text-gray-50"> {{ job.company ? job.company.name : 'N/A' }}
+                        <h6 class="text-gray-900 text-17 dark:text-gray-50"> 
                         </h6>
                         <p class="text-gray-500 dark:text-gray-300 Since July 2017"></p>
                       </div>
@@ -258,15 +260,15 @@
                               class="text-xl uil uil-map-marker group-data-[theme-color=violet]:text-violet-500 group-data-[theme-color=sky]:text-sky-500 group-data-[theme-color=red]:text-red-500 group-data-[theme-color=green]:text-green-500 group-data-[theme-color=pink]:text-pink-500 group-data-[theme-color=blue]:text-blue-500"></i>
                             <div class="ltr:ml-3 rtl:mr-3">
                               <h6 class="mb-1 text-sm text-gray-900 dark:text-gray-50">Location</h6>
-                              <p class="text-sm text-gray-500 dark:text-gray-300">{{ job.address ?? '' }}, {{
-                                job.location.name ?? '' }}</p>
+                              <p class="text-sm text-gray-500 dark:text-gray-300">{{ job.address ?? '' }},</p>
                             </div>
                           </div>
                         </li>
                       </ul>
 
                       <div class="mt-6">
-                        <NuxtLink :to="`/companies/${job.company.slug}`"
+                        
+                        <NuxtLink to="">
                           class="w-full text-white border-transparent btn group-data-[theme-color=violet]:bg-violet-500 group-data-[theme-color=sky]:bg-sky-500 group-data-[theme-color=red]:bg-red-500 group-data-[theme-color=green]:bg-green-500 group-data-[theme-color=pink]:bg-pink-500 group-data-[theme-color=blue]:bg-blue-500">
                           <i class="mdi mdi-eye"></i> View Profile
                         </NuxtLink>
@@ -348,7 +350,7 @@ useHead({
 });
 
 onMounted(async () => {
-  await jobStore.fetchJob(route.params.slug)
+  await jobStore.fetchJob()
   const categoryId = job.category || 1
   await jobStore.fetchJobs({ category: categoryId })
 })

@@ -29,13 +29,14 @@
       </div>
     </section>
   </footer>
-</template>
+</template>-->
+
 <script setup>
 import { ref } from 'vue'
 
 const year = ref(new Date().getFullYear())
 </script>
-    -->
+
 <template>
 <footer class="footer ">
   <!-- start footer -->
@@ -185,11 +186,11 @@ const year = ref(new Date().getFullYear())
       <div class="container mx-auto">
           <div class="text-center">
               <p class="mb-0 text-center text-white/50">
-                  <script>document.write(new Date().getFullYear())</script>
-                  © Jobcy - Job Listing Page
-                      Template by
-                  <a href="https://themeforest.net/search/themesdesign" target="_blank" class="underline transition-all duration-300 hover:text-gray-50">Themesdesign</a>
-              </p>
+            ©
+            <span class="text-bold text-white">{{ year }}</span>
+            Alfajiri Jobs
+          </p>
+                  
           </div>
       </div>
   </section>
